@@ -1,0 +1,42 @@
+.home {
+  section {
+    min-height: 100vh;
+    width: 100%;
+
+    &.intro {
+      background: $white;
+    }
+
+    &.skills {
+      background: $deep-green;
+    }
+
+    &.portfolio {
+      background: $lime;
+    }
+
+    &.about {
+      background: $light-blgr;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+
+      h2 {
+        font-size: 10rem;
+        color: rgba(255,255,255,0.2);
+        text-transform: uppercase;
+      }
+
+      h3 {
+        font-family: 'Nanum Myeongjo', serif;
+        color: $white;
+        font-size: 3rem;
+        position: absolute;
+        top: 40%;
+        left: 34%;
+      }
+    }
+  }
+}

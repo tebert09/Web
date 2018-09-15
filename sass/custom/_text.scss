@@ -1,0 +1,33 @@
+body {
+  font-family: $small-font;
+  @include media-breakpoint-up(md) {}
+  @include media-breakpoint-up(lg) {
+    font-family: $large-font;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $small-header;
+  @include media-breakpoint-up(md) {}
+  @include media-breakpoint-up(lg) {
+    font-family: $large-header;
+  }
+}
+
+ol,
+p,
+ul {
+  color: $dark-blgr;
+  line-height: 1.65;
+  font-size: $font-size-base;
+  margin-bottom: 1.3em;
+  @include media-breakpoint-up(lg) {
+    color: $nintey-grey;
+    font-size: $font-size-base * 1.1;
+    line-height: 1.75;
+  }
+
+  &:last-child {
+    margin-bottom: 1.5em;
+  }
+}

@@ -1,0 +1,37 @@
+/*
+font-family: 'Teko', sans-serif;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Satisfy', cursive;
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Zilla Slab', serif;
+font-family: 'Amaranth', sans-serif;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Oswald', sans-serif;
+*/
+
+// pink theme in small
+$pink: #ba2765;
+$magenta: #7a1442;
+$dark-blgr: #353342;
+
+$text-color-sm: $dark-blgr !default; //** Global textual link color.
+$link-color-sm: $pink !default;
+$small-font: 'Nanum Myeongjo', serif;
+$small-header: 'Permanent Marker', cursive;
+
+// green theme in large
+$deep-green: #26484a;
+$lime: #b5d069;
+$light-blgr: #81989f;
+
+
+
+$large-font: 'Amaranth', sans-serif;
+$large-header: 'Oswald', sans-serif;
+
+// general
+$nintey-grey: #4d4d4d;
+$white: #ffffff;
+$black: #000000;
+
+$font-size-base: 1.3rem !default;
