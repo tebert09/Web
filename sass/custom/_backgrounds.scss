@@ -9,6 +9,14 @@
 
     &.skills {
       background: $deep-green;
+      h4,
+      h5,
+      h6,
+      li,
+      p,
+      ul {
+        color: $white;
+      }
     }
 
     &.portfolio {
@@ -17,6 +25,19 @@
 
     &.about {
       background: $light-blgr;
+    }
+
+    &.about,
+    &.portfolio,
+    &.skills {
+      h4,
+      h5,
+      h6,
+      li,
+      p,
+      ul {
+        color: $white;
+      }
     }
 
     header {
