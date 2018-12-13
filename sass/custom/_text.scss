@@ -2,7 +2,7 @@ body {
   font-family: $small-font;
   @include media-breakpoint-up(md) {}
   @include media-breakpoint-up(lg) {
-    font-family: $large-font;
+    font-family: $large-body;
   }
 }
 
