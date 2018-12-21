@@ -14,6 +14,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+}
+h2 {
+  font-size: 2.5em;
+}
+
+
+
 ol,
 p,
 ul {
@@ -29,5 +39,27 @@ ul {
 
   &:last-child {
     margin-bottom: 1.5em;
+  }
+}
+
+
+.extension {
+  h1, h2, h3, h4, h5, h6 {
+    color: $extension;
+  }
+}
+.msea {
+  h1, h2, h3, h4, h5, h6 {
+    color: $msea;
+  }
+}
+.vhb {
+  h1, h2, h3, h4, h5, h6 {
+    color: $vhb;
+  }
+}
+.quarrix {
+  h1, h2, h3, h4, h5, h6 {
+    color: quarrix;
   }
 }

@@ -1,15 +1,4 @@
 // Contents
-//
-// Navbar
-// Navbar brand
-// Navbar nav
-// Navbar text
-// Navbar divider
-// Responsive navbar
-// Navbar position
-// Navbar themes
-
-
 // Navbar
 //
 // Provide a static navbar from which we expand to create full-width, fixed, and
@@ -22,38 +11,16 @@
   align-items: center;
   justify-content: space-between; // space out brand from logo
   padding: $navbar-padding-y $navbar-padding-x;
-
   // Because flex properties aren't inherited, we need to redeclare these first
   // few properties so that content nested within behave properly.
-  > .container,
-  > .container-fluid {
+  > .container-fluid,
+  > .container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }
 }
-
-
-// Navbar brand
-//
-// Used for brand, project, or site names.
-
-.navbar-brand {
-  display: inline-block;
-  padding-top: $navbar-brand-padding-y;
-  padding-bottom: $navbar-brand-padding-y;
-  margin-right: $navbar-padding-x;
-  font-size: $navbar-brand-font-size;
-  line-height: inherit;
-  white-space: nowrap;
-
-  @include hover-focus {
-    text-decoration: none;
-  }
-}
-
-
 // Navbar nav
 //
 // Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
@@ -75,27 +42,14 @@
     float: none;
   }
 }
-
-
-// Navbar text
-//
-//
-
-.navbar-text {
-  display: inline-block;
-  padding-top: $nav-link-padding-y;
-  padding-bottom: $nav-link-padding-y;
-}
-
-
 // Responsive navbar
 //
 // Custom styles for responsive collapsing and toggling of navbar contents.
 // Powered by the collapse Bootstrap JavaScript plugin.
-
 // When collapsed, prevent the toggleable navbar contents from appearing in
 // the default flexbox row orientation. Requires the use of `flex-wrap: wrap`
 // on the `.navbar` parent.
+
 .navbar-collapse {
   flex-basis: 100%;
   flex-grow: 1;
@@ -103,8 +57,8 @@
   // properly vertically. Can be easily overridden with flex utilities.
   align-items: center;
 }
-
 // Button for toggling the navbar when in its collapsed state
+
 .navbar-toggler {
   padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
   font-size: $navbar-toggler-font-size;
@@ -112,19 +66,17 @@
   background-color: transparent; // remove default button style
   border: $border-width solid transparent; // remove default button style
   @include border-radius($navbar-toggler-border-radius);
-
   @include hover-focus {
     text-decoration: none;
   }
-
   // Opinionated: add "hand" cursor to non-disabled .navbar-toggler elements
   &:not(:disabled):not(.disabled) {
     cursor: pointer;
   }
 }
-
 // Keep as a separate element so folks can easily override it with another icon
 // or image file as needed.
+
 .navbar-toggler-icon {
   display: inline-block;
   width: 1.5em;
@@ -134,9 +86,9 @@
   background: no-repeat center center;
   background-size: 100% 100%;
 }
-
 // Generate series of `.navbar-expand-*` responsive classes for configuring
 // where your navbar collapses.
+
 .navbar-expand {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);
@@ -144,13 +96,12 @@
 
     &#{$infix} {
       @include media-breakpoint-down($breakpoint) {
-        > .container,
-        > .container-fluid {
+        > .container-fluid,
+        > .container {
           padding-right: 0;
           padding-left: 0;
         }
       }
-
       @include media-breakpoint-up($next) {
         flex-flow: row nowrap;
         justify-content: flex-start;
@@ -167,16 +118,15 @@
             padding-left: $navbar-nav-link-padding-x;
           }
         }
-
         // For nesting containers, have to redeclare for alignment purposes
-        > .container,
-        > .container-fluid {
+        > .container-fluid,
+        > .container {
           flex-wrap: nowrap;
         }
 
         .navbar-collapse {
-          display: flex !important;  // stylelint-disable-line declaration-no-important
-
+          display: flex !important;
+          // stylelint-disable-line declaration-no-important
           // Changes flex-bases to auto because of an IE10 bug
           flex-basis: auto;
         }
@@ -189,111 +139,71 @@
   }
 }
 
+.navbar-toggler {
+  .hamburger {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
 
-// Navbar themes
-//
-// Styles for switching between navbars with light or dark background.
+    .hamburger-lines {
+      top: 50%;
+      display: block;
+      margin-top: -2px;
+    }
 
-// Dark links against a light background
-.navbar-light {
-  .navbar-brand {
-    color: $navbar-light-active-color;
-
-    @include hover-focus {
-      color: $navbar-light-active-color;
+    .hamburger-lines,
+    .hamburger-lines:after,
+    .hamburger-lines:before {
+      position: absolute;
+      width: 40px;
+      height: 4px;
+      transition-timing-function: ease;
+      transition-duration: 0.15s;
+      transition-property: transform;
+      border-radius: 4px;
+      background-color: $deep-green;
     }
   }
 
-  .navbar-nav {
-    .nav-link {
-      color: $navbar-light-color;
+  .hamburger-lines {
+    transition-timing-function: cubic-bezier(.55,.055,.675,.19);
+    transition-duration: 0.22s;
 
-      @include hover-focus {
-        color: $navbar-light-hover-color;
-      }
-
-      &.disabled {
-        color: $navbar-light-disabled-color;
-      }
+    &:after,
+    &:before {
+      display: block;
+      content: "";
     }
 
-    .show > .nav-link,
-    .active > .nav-link,
-    .nav-link.show,
-    .nav-link.active {
-      color: $navbar-light-active-color;
+    &:before {
+      top: -10px;
+      transition: top 0.1s ease-in 0.25s,opacity 0.1s ease-in;
     }
-  }
 
-  .navbar-toggler {
-    color: $navbar-light-color;
-    border-color: $navbar-light-toggler-border-color;
-  }
-
-  .navbar-toggler-icon {
-    background-image: $navbar-light-toggler-icon-bg;
-  }
-
-  .navbar-text {
-    color: $navbar-light-color;
-    a {
-      color: $navbar-light-active-color;
-
-      @include hover-focus {
-        color: $navbar-light-active-color;
-      }
+    &:after {
+      bottom: -10px;
+      transition: bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(.55,.055,.675,.19);
     }
   }
 }
 
-// White links against a dark background
-.navbar-dark {
-  .navbar-brand {
-    color: $navbar-dark-active-color;
+.navbar-toggler[aria-expanded="true"] {
+  .hamburger-lines {
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(.215,.61,.355,1);
+    transform: rotate(225deg);
 
-    @include hover-focus {
-      color: $navbar-dark-active-color;
-    }
-  }
-
-  .navbar-nav {
-    .nav-link {
-      color: $navbar-dark-color;
-
-      @include hover-focus {
-        color: $navbar-dark-hover-color;
-      }
-
-      &.disabled {
-        color: $navbar-dark-disabled-color;
-      }
+    &:before {
+      top: 0;
+      transition: top 0.1s ease-out,opacity 0.1s ease-out 0.12s;
+      opacity: 0;
     }
 
-    .show > .nav-link,
-    .active > .nav-link,
-    .nav-link.show,
-    .nav-link.active {
-      color: $navbar-dark-active-color;
-    }
-  }
-
-  .navbar-toggler {
-    color: $navbar-dark-color;
-    border-color: $navbar-dark-toggler-border-color;
-  }
-
-  .navbar-toggler-icon {
-    background-image: $navbar-dark-toggler-icon-bg;
-  }
-
-  .navbar-text {
-    color: $navbar-dark-color;
-    a {
-      color: $navbar-dark-active-color;
-
-      @include hover-focus {
-        color: $navbar-dark-active-color;
-      }
+    &:after {
+      bottom: 0;
+      transition: bottom 0.1s ease-out,transform 0.22s cubic-bezier(.215,.61,.355,1) 0.12s;
+      transform: rotate(-90deg);
     }
   }
 }
