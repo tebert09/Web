@@ -1,45 +1,64 @@
-// Contents
+//
 // Navbar
 //
-// Provide a static navbar from which we expand to create full-width, fixed, and
-// other navbar variations.
+
 
 .navbar {
   position: relative;
   display: flex;
+  display: block;
   flex-wrap: wrap; // allow us to do the line break for collapsing content
   align-items: center;
   justify-content: space-between; // space out brand from logo
-  padding: $navbar-padding-y $navbar-padding-x;
   // Because flex properties aren't inherited, we need to redeclare these first
   // few properties so that content nested within behave properly.
-  > .container-fluid,
-  > .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
 }
-// Navbar nav
-//
-// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
 
 .navbar-nav {
   display: flex;
-  flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+  flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 
-  .nav-link {
-    padding-right: 0;
-    padding-left: 0;
+  .nav-item {
+    font-size: 2rem;
+    font-family: $small-font;
+    text-align: center;
   }
 
-  .dropdown-menu {
-    position: static;
-    float: none;
+  .nav-link {
+    display: block;
+    padding: 15px 5px;
+    color: $white;
+    @include hover-focus {
+      text-decoration: none;
+      background: $pink;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .nav-item {
+      font-size: 1rem;
+      font-family: $large-font;
+      text-align: center;
+      width: 20%;
+    }
+
+    .nav-link {
+      padding: 15px 5px;
+      color: $deep-green;
+
+      @include hover-focus {
+        background: transparent;
+        text-transform: none;
+        font-weight: normal;
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+      }
+    }
   }
 }
 // Responsive navbar
@@ -56,36 +75,19 @@
   // For always expanded or extra full navbars, ensure content aligns itself
   // properly vertically. Can be easily overridden with flex utilities.
   align-items: center;
-}
-// Button for toggling the navbar when in its collapsed state
 
-.navbar-toggler {
-  padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
-  font-size: $navbar-toggler-font-size;
-  line-height: 1;
-  background-color: transparent; // remove default button style
-  border: $border-width solid transparent; // remove default button style
-  @include border-radius($navbar-toggler-border-radius);
-  @include hover-focus {
-    text-decoration: none;
+  &.show {
+    height: 100%;
+    background: $magenta;
   }
-  // Opinionated: add "hand" cursor to non-disabled .navbar-toggler elements
-  &:not(:disabled):not(.disabled) {
-    cursor: pointer;
+  @include media-breakpoint-up(lg) {
+    &.show {
+      height: 100px;
+      background: transparent;
+    }
   }
 }
-// Keep as a separate element so folks can easily override it with another icon
-// or image file as needed.
 
-.navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  content: "";
-  background: no-repeat center center;
-  background-size: 100% 100%;
-}
 // Generate series of `.navbar-expand-*` responsive classes for configuring
 // where your navbar collapses.
 
@@ -95,33 +97,13 @@
     $infix: breakpoint-infix($next, $grid-breakpoints);
 
     &#{$infix} {
-      @include media-breakpoint-down($breakpoint) {
-        > .container-fluid,
-        > .container {
-          padding-right: 0;
-          padding-left: 0;
-        }
-      }
       @include media-breakpoint-up($next) {
         flex-flow: row nowrap;
         justify-content: flex-start;
 
         .navbar-nav {
           flex-direction: row;
-
-          .dropdown-menu {
-            position: absolute;
-          }
-
-          .nav-link {
-            padding-right: $navbar-nav-link-padding-x;
-            padding-left: $navbar-nav-link-padding-x;
-          }
-        }
-        // For nesting containers, have to redeclare for alignment purposes
-        > .container-fluid,
-        > .container {
-          flex-wrap: nowrap;
+          width: 100%;
         }
 
         .navbar-collapse {
@@ -133,6 +115,7 @@
 
         .navbar-toggler {
           display: none;
+          height: 0;
         }
       }
     }
@@ -140,6 +123,13 @@
 }
 
 .navbar-toggler {
+  padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
+  font-size: $navbar-toggler-font-size;
+  line-height: 1;
+  height: 70px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
   .hamburger {
     position: relative;
     display: inline-block;
@@ -162,7 +152,7 @@
       transition-duration: 0.15s;
       transition-property: transform;
       border-radius: 4px;
-      background-color: $deep-green;
+      background-color: $white;
     }
   }
 
@@ -186,6 +176,9 @@
       transition: bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(.55,.055,.675,.19);
     }
   }
+  @include media-breakpoint-up(lg) {
+
+  }
 }
 
 .navbar-toggler[aria-expanded="true"] {
@@ -204,6 +197,35 @@
       bottom: 0;
       transition: bottom 0.1s ease-out,transform 0.22s cubic-bezier(.215,.61,.355,1) 0.12s;
       transform: rotate(-90deg);
+    }
+  }
+}
+
+header {
+  background: $pink;
+  width: 100%;
+  display: inline-block;
+
+  .mobile-logo {
+    float: left;
+    width: 80%;
+    display: flex;
+  }
+
+  .desk-logo {
+    display: none;
+  }
+  @include media-breakpoint-up(lg) {
+    background: transparent;
+    .desk-logo {
+      display: block;
+      img {
+        width: 100%;
+      }
+    }
+
+    .mobile-logo {
+      display: none;
     }
   }
 }

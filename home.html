@@ -8,40 +8,42 @@
 <body class="home">
 
   <header>
-
-  </header>
-  <nav id="navigation" class="navbar navbar-expand-lg">
-     <div class="test">
-         
-     </div>
-     
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="hamburger">
-        <span class="hamburger-lines"></span>
-      </span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="skills.html">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="work.html">Work</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About Me</a>
-        </li>
-      </ul>
+    <div class="mobile-logo">
+        <img src="images/maroon-big.svg" alt="Terri Ebert logo">
     </div>
-  </nav>
-  
+    <nav id="navigation" class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger">
+            <span class="hamburger-lines"></span>
+          </span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="skills.html">Skills</a>
+            </li>
+            <div class="desk-logo">
+                <img src="images/te-green.svg" alt="Terri Ebert logo">
+            </div>
+            <li class="nav-item">
+              <a class="nav-link" href="work.html">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Me</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </header>
 
-   
+
+
+
   <main>
     <section class="intro">
       <div class="container">
@@ -55,15 +57,14 @@
     </section>
 
   </main>
-  
-    
-    
+
+
+
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/collapse.js"></script>
-   
-<script> 
-     $("#navigation").load("navigation.html");
 
-   </script>
+  <script>
+    $("#navigation").load("navigation.html");
+  </script>
 </body>
