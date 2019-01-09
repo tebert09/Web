@@ -19,7 +19,8 @@
 
   .nav-item {
     font-size: 2rem;
-    font-family: $small-font;
+    //font-family: $small-font;
+    font-family: $large-font;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,9 +30,12 @@
     display: block;
     padding: 15px 5px;
     color: $white;
+    width: 100%;
+    text-align: center;
+
     @include hover-focus-active {
       text-decoration: none;
-      background: $pink;
+      background: $teal;
       text-transform: uppercase;
       font-weight: bold;
     }
@@ -41,7 +45,7 @@
 
     .nav-item {
       font-size: 1.3rem;
-      font-family: $large-font;
+      //font-family: $large-font;
       text-align: center;
       width: 20%;
     }
@@ -71,7 +75,7 @@
 
   &.show {
     height: 100%;
-    background: $magenta;
+    background: $deep-green;
   }
   @include media-breakpoint-up(lg) {
     &.show {
@@ -102,24 +106,33 @@
 }
 
 .navbar-toggler {
+  // hamburger hamburger--spin js-hamburger
   padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
-  font-size: $navbar-toggler-font-size;
   line-height: 1;
-  height: 70px;
+  height: 65px;
   background: transparent;
   border: 0;
+  display: inline-block;
+  overflow: visible;
   cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
 
   .hamburger {
+    //hamburger-box
     position: relative;
     display: inline-block;
     width: 40px;
     height: 24px;
 
     .hamburger-lines {
+      //hamburger-inner
       top: 50%;
       display: block;
       margin-top: -2px;
+      transition-timing-function: cubic-bezier(.55, .055, .675, .19);
+      transition-duration: 0.22s;
     }
 
     .hamburger-lines,
@@ -127,33 +140,30 @@
     .hamburger-lines:before {
       position: absolute;
       width: 40px;
-      height: 4px;
+      height: 5px;
       transition-timing-function: ease;
       transition-duration: 0.15s;
       transition-property: transform;
       border-radius: 4px;
-      background-color: $white;
-    }
-  }
-
-  .hamburger-lines {
-    transition-timing-function: cubic-bezier(.55,.055,.675,.19);
-    transition-duration: 0.22s;
-
-    &:after,
-    &:before {
-      display: block;
-      content: "";
+      background: $deep-green;
     }
 
-    &:before {
-      top: -10px;
-      transition: top 0.1s ease-in 0.25s,opacity 0.1s ease-in;
-    }
+    .hamburger-lines {
+      &:after,
+      &:before {
+        display: block;
+        content: "";
+      }
 
-    &:after {
-      bottom: -10px;
-      transition: bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(.55,.055,.675,.19);
+      &:before {
+        top: -12px;
+        transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+      }
+
+      &:after {
+        bottom: -12px;
+        transition: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(.55, .055, .675, .19);
+      }
     }
   }
   @include media-breakpoint-up(lg) {
@@ -163,27 +173,29 @@
 }
 
 .navbar-toggler[aria-expanded="true"] {
+  // is-active
   .hamburger-lines {
+    //hamburger-inner
     transition-delay: 0.12s;
-    transition-timing-function: cubic-bezier(.215,.61,.355,1);
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1);
     transform: rotate(225deg);
 
     &:before {
       top: 0;
-      transition: top 0.1s ease-out,opacity 0.1s ease-out 0.12s;
+      transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
       opacity: 0;
     }
 
     &:after {
       bottom: 0;
-      transition: bottom 0.1s ease-out,transform 0.22s cubic-bezier(.215,.61,.355,1) 0.12s;
+      transition: bottom 0.1s ease-out, transform 0.22s cubic-bezier(.215, .61, .355, 1) 0.12s;
       transform: rotate(-90deg);
     }
   }
 }
 
 header {
-//  background: $pink;
+  //  background: $pink;
   width: 100%;
   display: inline-block;
 
