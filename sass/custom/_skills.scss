@@ -14,7 +14,7 @@
   li {
     float: left;
     text-transform: uppercase;
-    flex: 0 1 14.2%;
+    flex: 0 1 30%;
 
     a {
       padding: 5px;
@@ -36,6 +36,20 @@
         color: $deep-green;
         text-decoration: none;
       }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    li {
+      float: left;
+      text-transform: uppercase;
+      flex: 0 1 30%;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    li {
+      float: left;
+      text-transform: uppercase;
+      flex: 0 1 14.2%;
     }
   }
 }

@@ -9,53 +9,234 @@
 
   <header>
     <div class="mobile-logo">
-        <img src="images/maroon-big.svg" alt="Terri Ebert logo">
+      <img src="images/maroon-big.svg" alt="Terri Ebert logo">
     </div>
     <nav id="navigation" class="navbar navbar-expand-lg">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="hamburger">
-            <span class="hamburger-lines"></span>
-          </span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="skills.html">Skills</a>
-            </li>
-            <div class="desk-logo">
-                <img src="images/te-green.svg" alt="Terri Ebert logo">
-            </div>
-            <li class="nav-item">
-              <a class="nav-link" href="work.html">Work</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Me</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger">
+          <span class="hamburger-lines"></span>
+        </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#work">Work</a>
+          </li>
+
+          <div class="desk-logo">
+            <img src="images/te-green.svg" alt="Terri Ebert logo">
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
 
-
-
   <main>
+    <a name="home"></a>
     <section class="intro">
       <div class="container">
         <div class="row">
           <div class="col-12">
             <h1>Hello, I'm Terri</h1>
-            <h2>A front-end designer in Minneapolis</h2>
+            <div class="home-intro">
+              <h2>I'm a
+                <div class="words">
+                  <span>front-end designer in Minneapolis.</span>
+                  <span>Packer fan.</span>
+                  <span>dairy cow owner.</span>
+                  <!--  <span>freakishly organized person.</span>-->
+                </div>
+              </h2>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <a name="work"></a>
+    <section class="portfolio">
+      <div class="container">
+        <header>
+          <h2>What I've done</h2>
+          <h3>Sites I've worked on</h3>
+        </header>
+      </div>
+    </section>
+
+    <a name="skills"></a>
+    <section class="skills">
+      <div class="container">
+        <header>
+          <h2>What I do</h2>
+          <h3>How can I help you?</h3>
+        </header>
+        <div id="tabs">
+          <div class="skill" id="tab1">
+            <div class="row">
+              <div class="col-12">
+                <h4>User Experience [UX]</h4>
+              </div>
+              <div class="col-12 col-sm">
+                <!-- <p>"Pay attention to what users do, not what they say." - Jakob Nielsen</p> -->
+                <p>When designing, my focus is always on envisioning how the user will interact with each specific
+                  feature.
+                  Continuous testing, after research is the key to ensuring a usable website.</p>
+              </div>
+              <div class="col-12 col-sm">
+                <ul>
+                  <li>Card Sort</li>
+                  <li>Tree Test</li>
+                  <li>Define an Audience</li>
+                  <li>Information Architecture</li>
+                  <li>User Test</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="skill" id="tab2">
+            <div class="row">
+              <div class="col-12">
+                <h4>User Interface [UI]</h4>
+              </div>
+              <div class="col-12 col-sm">
+                <!-- <p>"Good design is a lot like clear thinking made visual." - Edward Tufte</p> -->
+                <p>Coming up with the design is the most complicated piece of a project. It has to be usable, follow
+                  the
+                  company's brand, appealing to the eye, and perfect for all types of screens.</p>
+              </div>
+              <div class="col-12 col-sm">
+                <ul>
+                  <li>Sketching</li>
+                  <li>Wireframes</li>
+                  <li>Illustrator</li>
+                  <li>Photoshop</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="skill" id="tab3">
+            <div class="row">
+              <div class="col-12">
+                <h4>Responsive Design [RWD]</h4>
+              </div>
+              <div class="col-12 col-sm">
+                <!-- <p>"If you think math is hard try web design" ― Pixxelznet</p> -->
+                <p>I love writing HTML and CSS. I work very hard to make sure every feature on a website looks perfect
+                  on
+                  every
+                  browser and in every width - not just for each device. Finding and learning new attributes that fix
+                  style
+                  problems is very rewarding.</p>
+                <p>Reduce the width of your screen to see how passionate I am! </p>
+              </div>
+              <div class="col-12 col-sm">
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS / SCSS</li>
+                  <li>Frameworks - Bootstrap &amp; Foundation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="skill" id="tab4">
+            <div class="row">
+              <div class="col-12">
+                <h4>JavaScript</h4>
+              </div>
+            </div>
+          </div>
+          <div class="skill" id="tab5">
+            <div class="row">
+              <div class="col-12">
+                <h4>Accessibility [A11y]</h4>
+              </div>
+              <div class="col">
+                <p>A11y is always at the top of my mind in every step of the web process. From UX to the CMS chosen,
+                  each
+                  piece
+                  must be accessible. I've used many browser extensions, as well as Siteimprove to test my design and
+                  code
+                  against the WCAG 2.1 standards.</p>
+              </div>
+            </div>
+          </div>
+          <div class="skill" id="tab6">
+            <div class="row">
+              <div class="col-12">
+                <h4>Content Management Systems [CMS]</h4>
+              </div>
+              <div class="col">
+                <p>I believe a good content management system can change a content editor's life. I've developed
+                  websites in:</p>
+              </div>
+              <div class="col">
+                <ul>
+                  <li>Drupal (7 &amp; 8)</li>
+                  <li>WordPress</li>
+                  <li>Kentico</li>
+                  <li>Sitecore</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill" id="tab7">
+            <h4>Documentation</h4>
+            <p>Documentation is one of my least favorite parts of a project, but I know it's one of the most important.
+              Not
+              only for me when I go back into my code, but for developers and content editors who touch the site after
+              me.
+              I always try to over-comment
+              my code, which helps keep it organized and readable. Content editor documentation is even more important
+              because people should be able to add content to the site I build them. Handing off a site I've created
+              without any worry is a really great
+              feeling.
+            </p>
+          </div>
+        </div>
+        <ul id="skill-selector">
+          <li><a href="#tab1">UX</a></li>
+          <li><a href="#tab2">UI</a></li>
+          <li><a href="#tab3">RWD</a></li>
+          <li><a href="#tab4">JS</a></li>
+          <li><a href="#tab5">A11y</a></li>
+          <li><a href="#tab6">CMS</a></li>
+          <li><a href="#tab7">Doc</a></li>
+        </ul>
+    </section>
+    <a name="about"></a>
+    <section class="about">
+      <div class="container">
+        <header>
+          <h2>About me</h2>
+          <h3>What would you like to know?</h3>
+        </header>
+        <div class="row">
+          <div class="col-12">
+            <h4>Random facts</h4>
+            <ol>
+              <li>I'm from Wisconsin, so yes, I LOVE cheese.</li>
+              <li>I live in Minneapolis and cheer for the Packers and Gophers.</li>
+              <li>I own 11 of my own dairy cows.</li>
+              <li>One of my top skills is organizing a spreadsheet.</li>
+              <li>My favorite thing about Minneapolis is the food and all the great restaurants.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
 
@@ -63,6 +244,7 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/collapse.js"></script>
+  <script src="js/terri-ebert.js"></script>
 
   <script>
     $("#navigation").load("navigation.html");

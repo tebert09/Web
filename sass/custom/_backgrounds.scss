@@ -1,6 +1,5 @@
 .home {
   section {
-    min-height: 100vh;
     width: 100%;
 
     h4 {
@@ -12,7 +11,7 @@
       text-align: center;
 
       h2 {
-        font-size: 10rem;
+        font-size: 5rem;
         color: rgba(255,255,255,0.2);
         text-transform: uppercase;
       }
@@ -20,10 +19,34 @@
       h3 {
         font-family: 'Nanum Myeongjo', serif;
         color: $white;
-        font-size: 3rem;
+        font-size: 1rem;
         position: absolute;
         top: 40%;
         left: 34%;
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    section {
+      min-height: 100vh;
+
+      h4 {
+        font-size: 2rem;
+      }
+
+      header {
+        position: relative;
+        text-align: center;
+
+        h2 {
+          font-size: 10rem;
+        }
+
+        h3 {
+          font-size: 3rem;
+          top: 40%;
+          left: 34%;
+        }
       }
     }
   }
@@ -63,11 +86,4 @@
   ul {
     color: $white;
   }
-}
-
-
-.pattern {
-  background: url("images/line.png") repeat;
-  background-size: cover;
-  height: 20px;
 }
