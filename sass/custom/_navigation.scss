@@ -1,6 +1,44 @@
 //
-// Navbar
+// Navbar and Header
 //
+
+header {
+  //  background: $pink;
+  width: 100%;
+  display: inline-block;
+
+
+  .mobile-logo {
+    float: left;
+    width: 80%;
+    display: flex;
+
+      padding: 5px 15px;
+
+    img {
+      width: 80%;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    background: transparent;
+
+    .mobile-logo {
+      display: none;
+    }
+  }
+}
+
+.desk-logo {
+  display: none;
+  @include media-breakpoint-up(lg) {
+    display: block;
+    text-align: center;
+
+    img {
+      width: 80%;
+    }
+  }
+}
 
 .navbar {
   position: relative;
@@ -32,7 +70,6 @@
     color: $white;
     width: 100%;
     text-align: center;
-
     @include hover-focus-active {
       text-decoration: none;
       background: $teal;
@@ -84,8 +121,6 @@
     }
   }
 }
-// Generate series of `.navbar-expand-*` responsive classes for configuring
-// where your navbar collapses.
 
 .navbar-expand {
   @each $breakpoint in map-keys($grid-breakpoints) {
@@ -96,8 +131,6 @@
       @include media-breakpoint-up($next) {
         .navbar-collapse {
           display: flex !important;
-          // stylelint-disable-line declaration-no-important
-          // Changes flex-bases to auto because of an IE10 bug
           flex-basis: auto;
         }
       }
@@ -106,10 +139,9 @@
 }
 
 .navbar-toggler {
-  // hamburger hamburger--spin js-hamburger
-  padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
+  padding: 0 5px;
   line-height: 1;
-  height: 65px;
+  height: 50px;
   background: transparent;
   border: 0;
   display: inline-block;
@@ -118,16 +150,17 @@
   transition-timing-function: linear;
   transition-duration: 0.15s;
   transition-property: opacity, filter;
+  float: right;
+  position: relative;
+  z-index: 10;
 
   .hamburger {
-    //hamburger-box
     position: relative;
     display: inline-block;
     width: 40px;
     height: 24px;
 
     .hamburger-lines {
-      //hamburger-inner
       top: 50%;
       display: block;
       margin-top: -2px;
@@ -173,55 +206,24 @@
 }
 
 .navbar-toggler[aria-expanded="true"] {
-  // is-active
   .hamburger-lines {
-    //hamburger-inner
     transition-delay: 0.12s;
     transition-timing-function: cubic-bezier(.215, .61, .355, 1);
     transform: rotate(225deg);
+    background: $white;
 
     &:before {
       top: 0;
       transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
       opacity: 0;
+      background: $white;
     }
 
     &:after {
       bottom: 0;
       transition: bottom 0.1s ease-out, transform 0.22s cubic-bezier(.215, .61, .355, 1) 0.12s;
       transform: rotate(-90deg);
-    }
-  }
-}
-
-header {
-  //  background: $pink;
-  width: 100%;
-  display: inline-block;
-
-  .mobile-logo {
-    float: left;
-    width: 80%;
-    display: flex;
-  }
-
-  .desk-logo {
-    display: none;
-  }
-  @include media-breakpoint-up(lg) {
-    background: transparent;
-
-    .desk-logo {
-      display: block;
-      text-align: center;
-
-      img {
-        width: 80%;
-      }
-    }
-
-    .mobile-logo {
-      display: none;
+      background: $white;
     }
   }
 }

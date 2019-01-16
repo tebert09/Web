@@ -26,8 +26,6 @@ $lime: #b5d069;
 $light-blgr: #81989f;
 $teal: #429993;
 
-
-
 $large-font: 'Amaranth', sans-serif;
 $large-header: 'Oswald', sans-serif;
 $large-body: 'Open Sans Condensed', sans-serif;
@@ -38,7 +36,19 @@ $white: #ffffff;
 $black: #000000;
 
 $font-size-base: 1.3rem !default;
+$font-size-large: $font-size-base * 2.1 !default;
+$font-size-med: $font-size-base * 1.5 !default;
+$font-size-middle:  $font-size-base * 1.25 !default;
+$font-size-small: $font-size-base * 0.95 !default;
 
+$normal-line-height: 1.4 !default; //
+
+$font-size-h1: 2.8rem !default;
+$font-size-h2: 2.45rem !default;
+$font-size-h3: 2.0rem !default;
+$font-size-h4: 1.7rem !default;
+$font-size-h5: 1.5rem !default;
+$font-size-h6: 1.3rem !default;
 
 $extension: #7a0019;
 $vhb: #005D62;

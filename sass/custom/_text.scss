@@ -10,18 +10,25 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $large-header;
+  @extend %headings;
   @include media-breakpoint-up(md) {}
   @include media-breakpoint-up(lg) {}
 }
 
 h1 {
   text-transform: uppercase;
-  font-size: 3em;
+  font-size: $font-size-h1;
+  margin: 0;
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-h1 * 1.1;
+  }
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: $font-size-h2;
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-h2 * 1.1;
+  }
 }
 
 ol,
