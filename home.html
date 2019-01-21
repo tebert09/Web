@@ -7,7 +7,7 @@
 
 <body class="home">
 
-  <header>
+  <header class="main-header">
     <div class="mobile-logo">
       <a href="#home"><img src="images/green-teal-big.svg" alt="Terri Ebert logo"></a>
     </div>
@@ -26,7 +26,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#work">Work</a>
           </li>
-  
+
           <div class="desk-logo">
             <img src="images/te-green.svg" alt="Terri Ebert logo">
           </div>
@@ -41,17 +41,13 @@
     </nav>
   </header>
 
- 
-
-
-
   <main>
     <a name="home"></a>
     <section class="intro">
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h1>Hello, I'm Terri</h1>
+            <h1>Hey, I'm Terri</h1>
             <div class="home-intro mobile-only">
               <h2>I'm a front-end designer in Minneapolis who loves the Packers and owns dairy cows.
               </h2>
@@ -71,6 +67,8 @@
       </div>
     </section>
 
+    <div class="blank-space" style="height:100px;"></div>
+
     <a name="work"></a>
     <section class="portfolio">
       <div class="container">
@@ -78,6 +76,34 @@
           <h2>What I've done</h2>
           <h3>Sites I've worked on</h3>
         </header>
+        <div class="row">
+
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="diamond">
+              <img src="images/ext-thumb.jpg" alt="Extension website">
+              <div class="client"><a href="extension.html">UMN Extension</a></div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="diamond">
+              <img src="images/msea-thumb.jpg" alt="MSEA logo">
+              <div class="client"><a href="msea.html">MSEA</a></div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="diamond">
+              <img src="images/quarrix-thumb.jpg" alt="Quarrix website">
+              <div class="client"><a href="quarrix.html">Quarrix</a></div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="diamond">
+              <img src="images/vhb-thumb.jpg" alt="VHB website">
+              <div class="client"><a href="vhb.html">VHB</a></div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -230,16 +256,23 @@
           <h3>What would you like to know?</h3>
         </header>
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 col-sm-6">
+            <p>I'm Terri Ebert - I design, code, and develop websites in the Minneapolis area. I'm passionate about
+              making the web a better place to be for all people. I've done everything from taking inventory of all the
+              pages on a site to tweaking JavaScript on a working site.</p>
+            <p>Contact me via <a href="mailto:ebert.terri21@gmail.com">email</a> or check out my resume.</p>
+          </div>
+          <div class="col-12 col-sm-6">
             <h4>Random facts</h4>
             <ol>
               <li>I'm from Wisconsin, so yes, I LOVE cheese.</li>
               <li>I live in Minneapolis and cheer for the Packers and Gophers.</li>
-              <li>I own 11 of my own dairy cows.</li>
-              <li>One of my top skills is organizing a spreadsheet.</li>
+              <li>I own 10 of my own dairy cows.</li>
+              <li>One of my (self-proclaimed) top skills is organizing a spreadsheet.</li>
               <li>My favorite thing about Minneapolis is the food and all the great restaurants.</li>
             </ol>
           </div>
+
         </div>
       </div>
     </section>
@@ -251,8 +284,6 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/collapse.js"></script>
   <script src="js/terri-ebert.js"></script>
+  <script src="js/smooth-scroll.js"></script>
 
-  <script>
-    $("#navigation").load("navigation.html");
-  </script>
 </body>

@@ -1,0 +1,82 @@
+.portfolio .col-sm-6 {
+  text-align: center;
+}
+
+.diamond {
+  display: inline-block;
+  margin: 50px;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  border: 5px solid $deep-green;
+
+  background: $white;
+  text-align: center;
+
+
+  img {
+    display: block;
+    //transform: rotate(-45deg);
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+
+  .client {
+    display: none;
+  }
+
+  &:focus,
+  &:hover {
+    //transform: rotate(0deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: $deep-green;
+
+    img {
+      display: none;
+    }
+
+    .client {
+      display: block;
+      transform: rotate(-45deg);
+
+      a {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.work {
+  padding: 0px 0 80px;
+
+  h1 {
+    margin: 15px 0;
+  }
+  @include media-breakpoint-up(md) {
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 10px 0 40px;
+
+    h1 {
+      font-size: $font-size-h1 * 1.5;
+      margin: 25px 0;
+    }
+  }
+}
+
+.full-width {}

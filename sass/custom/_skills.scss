@@ -1,3 +1,14 @@
+.skill {
+  @include media-breakpoint-up(sm) {
+    min-height: 280px;
+  }
+  @include media-breakpoint-up(md) {
+    min-height: 280px;
+  }
+  @include media-breakpoint-up(lg) {
+    min-height: 280px;
+  }
+}
 
 #skill-selector {
   list-style-type: none;
@@ -14,7 +25,7 @@
   li {
     float: left;
     text-transform: uppercase;
-    flex: 0 1 30%;
+    flex: 0 1 25%;
 
     a {
       padding: 5px;
@@ -22,7 +33,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 4px;
+      margin: 1px 4px;
       padding: 0;
       color: #fff;
       cursor: pointer;
@@ -30,25 +41,27 @@
       border-radius: 17px;
       background: transparent;
       transition: all 0.5s cubic-bezier(.19,1,.22,1) 0s;
+      font-weight: normal;
+      text-decoration: none;
 
+      &:focus,
       &:hover {
         background: $white;
         color: $deep-green;
         text-decoration: none;
       }
     }
-  }
-  @include media-breakpoint-up(md) {
-    li {
-      float: left;
-      text-transform: uppercase;
-      flex: 0 1 30%;
+
+    &#active {
+      a {
+        background: $white;
+        color: $deep-green;
+        text-decoration: none;
+      }
     }
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     li {
-      float: left;
-      text-transform: uppercase;
       flex: 0 1 14.2%;
     }
   }

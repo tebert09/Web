@@ -1,35 +1,59 @@
 .home {
   section {
     width: 100%;
-    padding: 20px 0;
-
-    h4 {
-      font-size: 2rem;
-    }
+    padding: 30px 0;
 
     header {
       position: relative;
       text-align: center;
 
       h2 {
-        font-size: 5rem;
+        font-size: 3.6rem;
         color: rgba(255,255,255,0.2);
         text-transform: uppercase;
       }
 
       h3 {
-        font-family: 'Nanum Myeongjo', serif;
         color: $white;
-        font-size: 1rem;
+        font-size: 1.2rem;
         position: absolute;
-        top: 40%;
-        left: 34%;
+        top: 45%;
+        left: 30%;
+      }
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    section {
+      header {
+        h2 {
+          font-size: 4.6rem;
+        }
+
+        h3 {
+          font-size: 1.6rem;
+          top: 35%;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    section {
+      padding: 50px 0;
+      header {
+        h2 {
+          font-size: 5.6rem;
+        }
+
+        h3 {
+          font-size: 2.2rem;
+        }
       }
     }
   }
   @include media-breakpoint-up(lg) {
     section {
-      min-height: 100vh;
+      //min-height: 100vh;
+      padding: 70px 0;
 
       h4 {
         font-size: 2rem;
@@ -44,7 +68,7 @@
         }
 
         h3 {
-          font-size: 3rem;
+          font-size: 2.5rem;
           top: 40%;
           left: 34%;
         }
@@ -52,28 +76,35 @@
     }
   }
 }
+
 .intro {
   background: $white;
 }
 
 .skills {
-  background: $deep-green;
-  h4,
-  h5,
-  h6,
-  li,
-  p,
-  ul {
-    color: $white;
-  }
+  @extend %deep-green-gradient;
 }
 
 .portfolio {
-  background: $lime;
+  @extend %angle-bg;
+}
+
+.portfolio,
+.portfolio::after,
+.portfolio::before {
+  @extend %lime-gradient;
 }
 
 .about {
-  background: $light-blgr;
+  @extend %angle-top;
+}
+
+.about,
+.about::before {
+  background-color: $light-blgr;
+  background-image: url(../images/white-dot.svg);
+  background-repeat: repeat;
+  background-size: 3px 3px;
 }
 
 .about,
