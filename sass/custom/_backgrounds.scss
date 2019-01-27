@@ -6,19 +6,26 @@
     header {
       position: relative;
       text-align: center;
+      margin-bottom: 15px;
 
       h2 {
         font-size: 3.6rem;
-        color: rgba(255,255,255,0.2);
+        color: rgba(255,255,255,0.3);
         text-transform: uppercase;
+        font-family: $large-sans-header;
       }
 
       h3 {
         color: $white;
         font-size: 1.2rem;
         position: absolute;
-        top: 45%;
+        top: 40%;
         left: 30%;
+      }
+
+      h2,
+      h3 {
+        margin: 0;
       }
     }
   }
@@ -39,9 +46,10 @@
   @include media-breakpoint-up(md) {
     section {
       padding: 50px 0;
+
       header {
         h2 {
-          font-size: 5.6rem;
+          font-size: 5.8rem;
         }
 
         h3 {
@@ -52,19 +60,15 @@
   }
   @include media-breakpoint-up(lg) {
     section {
-      //min-height: 100vh;
-      padding: 70px 0;
+      //padding: 60px 0;
 
       h4 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
       header {
-        position: relative;
-        text-align: center;
-
         h2 {
-          font-size: 10rem;
+          font-size: 8rem;
         }
 
         h3 {
@@ -75,14 +79,69 @@
       }
     }
   }
+  @include media-breakpoint-up(xl) {
+    section {
+    //  padding: 70px 0;
+
+      h4 {
+        font-size: 2rem;
+      }
+
+      header {
+        h2 {
+          font-size: 10rem;
+        }
+
+        h3 {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
 }
 
-.intro {
-  background: $white;
+.home section.intro {
+  h1,
+  h2 {
+    font-family: $large-serif-header;
+    font-weight: normal;
+    text-transform: inherit;
+    text-align: center;
+    color: #464646;
+  }
+  @include media-breakpoint-up(md) {
+    h1,
+    h2 {
+      text-align: left;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    min-height: 350px;
+    padding: 60px 40px 80px;
+  }
+  @include media-breakpoint-up(xl) {
+    min-height: 450px;
+    padding: 60px 80px 80px;
+
+    h1 {
+      font-size: $font-size-h1 * 2.1;
+    }
+
+    h2 {
+      font-size: $font-size-h2 * 1.3;
+    }
+  }
 }
 
 .skills {
   @extend %deep-green-gradient;
+  padding: 50px 0 !important;
+  @include media-breakpoint-up(lg) {
+    padding: 60px 0 !important;
+  }
+  @include media-breakpoint-up(xl) {
+    padding: 70px 0 !important;
+  }
 }
 
 .portfolio {
@@ -102,7 +161,7 @@
 .about,
 .about::before {
   background-color: $light-blgr;
-  background-image: url(../images/white-dot.svg);
+  background-image: url("../images/white-dot.svg");
   background-repeat: repeat;
   background-size: 3px 3px;
 }

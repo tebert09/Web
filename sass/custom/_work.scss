@@ -4,10 +4,10 @@
 
 .diamond {
   display: inline-block;
-  margin: 50px;
+  margin: 30px;
   overflow: hidden;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   border: 5px solid $deep-green;
 
   background: $white;
@@ -43,6 +43,11 @@
       display: block;
       transform: rotate(-45deg);
 
+      h4 {
+        font-weight: normal;
+        font-size: 1.5rem;
+      }
+
       a {
         display: flex;
         height: 100%;
@@ -51,9 +56,21 @@
         justify-content: center;
         color: $white;
         text-decoration: none;
-        font-weight: bold;
+        font-weight: normal;
       }
     }
+  }
+  @include media-breakpoint-up(md) {
+    width: 200px;
+    height: 200px;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 160px;
+    height: 160px;
+  }
+  @media (min-width: 1400px) {
+    width: 200px;
+    height: 200px;
   }
 }
 

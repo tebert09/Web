@@ -1,9 +1,10 @@
 .skill {
+  //min-height: 400px;
   @include media-breakpoint-up(sm) {
     min-height: 280px;
   }
   @include media-breakpoint-up(md) {
-    min-height: 280px;
+    min-height: 340px;
   }
   @include media-breakpoint-up(lg) {
     min-height: 280px;
@@ -25,7 +26,7 @@
   li {
     float: left;
     text-transform: uppercase;
-    flex: 0 1 25%;
+    flex: 0 1 16%;
 
     a {
       padding: 5px;
@@ -62,7 +63,7 @@
   }
   @include media-breakpoint-up(sm) {
     li {
-      flex: 0 1 14.2%;
+    //  flex: 0 1 14.2%;
     }
   }
 }
