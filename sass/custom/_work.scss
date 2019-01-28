@@ -43,11 +43,6 @@
       display: block;
       transform: rotate(-45deg);
 
-      h4 {
-        font-weight: normal;
-        font-size: 1.5rem;
-      }
-
       a {
         display: flex;
         height: 100%;
@@ -59,6 +54,10 @@
         font-weight: normal;
       }
     }
+  }
+  h4 {
+    font-weight: normal;
+    font-size: 1.5rem;
   }
   @include media-breakpoint-up(md) {
     width: 200px;
@@ -74,15 +73,41 @@
   }
 }
 
-.work {
-  padding: 0px 0 80px;
+.projects {
+  .col-sm-4 {
+    text-align: center;
+  }
+  .diamond {
+    @include media-breakpoint-up(sm) {
+      width:100px;
+      height: 100px;
+      h4 {
+        font-size: 1.2rem;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      width: 160px;
+      height: 160px;
+      h4 {
+        font-size: 1.4rem;
+      }
+    }
+    @media (min-width: 1400px) {
+      width: 200px;
+      height: 200px;
+    }
 
+  }
+}
+
+.work {
   h1 {
     margin: 15px 0;
+    font-weight: normal;
   }
   @include media-breakpoint-up(md) {
     h1 {
-      text-align: center;
+      //text-align: center;
       margin: 20px 0;
     }
   }

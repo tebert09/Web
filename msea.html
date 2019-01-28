@@ -6,11 +6,43 @@
 </head>
 
 <body class="msea">
+  <header class="main-header">
+    <div class="mobile-logo">
+      <a href="home.html#home"><img src="images/green-teal-big.svg" alt="Terri Ebert logo"></a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="hamburger">
+        <span class="hamburger-lines"></span>
+      </span>
+    </button>
 
+    <nav id="navigation" class="navbar navbar-expand-lg">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.html#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html#work">Work</a>
+          </li>
+
+          <div class="desk-logo">
+            <a class="nav-link" href="home.html#home"><img src="images/te-green.svg" alt="Terri Ebert logo"></a>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html#about">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
   <main>
-
-    <section>
+    <section class="work">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -36,8 +68,8 @@
             <h3>My favorite part: </h3>
             <p>This project was my first freelance project, so the idea of building it on my own was daunting But, once
               it was finished it I felt ready to tackle even more clients. If you want to be one, give me a call!</p>
-              <h3>Skills I used: </h3>
-           <p> UI, IA, WordPress, Branding</p>
+            <h3>Skills I used: </h3>
+            <p> UI, IA, WordPress, Branding</p>
 
           </div>
           <div class="col-12 col-lg-4">
@@ -47,7 +79,40 @@
               <li>WordPress</li>
               <li>Freelancing</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="projects">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>My projects</h2>
+          </div>
+          <div class="col-12 col-sm-4">
+            <div class="diamond">
+              <img src="images/ext-thumb.jpg" alt="Extension website">
+              <div class="client">
+                <h4><a href="extension.html">UMN Extension</a></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4">
+            <div class="diamond">
+              <img src="images/quarrix-thumb.jpg" alt="Quarrix website">
+              <div class="client">
+                <h4><a href="quarrix.html">Quarrix</a></h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4">
+            <div class="diamond">
+              <img src="images/vhb-thumb.jpg" alt="VHB website">
+              <div class="client">
+                <h4><a href="vhb.html">VHB</a></h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -55,5 +120,5 @@
 
   </main>
   <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/collapse.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>

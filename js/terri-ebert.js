@@ -18,3 +18,18 @@ $(document).ready(function () {
         }
     });
 });
+
+
+// ==================================================
+// Hide mobile nav on click (because home page is not a new page)
+// ==================================================
+$(document).ready(function () {
+
+    $("body").click(function (event) {
+        // only do this if navigation is visible, otherwise you see jump in navigation while collapse() is called 
+        if ($(".navbar-collapse.show").is(":visible")) {
+            $('.navbar-collapse').collapse('toggle');
+        }
+    });
+
+});
