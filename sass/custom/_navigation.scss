@@ -48,9 +48,10 @@ header {
   @include media-breakpoint-up(lg) {
     display: block;
     text-align: center;
+    width: 20%;
 
     img {
-      width: 80%;
+      width: 100px;
     }
   }
 }
